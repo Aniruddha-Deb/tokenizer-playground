@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Tokenizer Playground</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Tokenizer Playground</h1>
+        <div class="tokenizer-options">
+            <label for="tokenizer">Choose Tokenizer:</label>
+            <select id="tokenizer">
+                <option value="gpt-4">GPT 4</option>
+                <option value="gpt-3.5-turbo">ChatGPT</option>
+                <option value="text-davinci-002">GPT 3.5</option>
+                <option value="llama-2-70b">Llama 2 (70B)</option>
+            </select>
+        </div>
+        <div class="input-container">
+            <label for="input-text">Input Text:</label>
+            <textarea id="input-text" rows="15"></textarea>
+        </div>
+        <div class="response-format">
+            <label>Response Format:</label>
+            <input type="radio" name="response-format" value="list" checked>Strings
+            <input type="radio" name="response-format" value="numeric-ids">Numeric IDs
+        </div>
+        <div class="tokenized-text" id="tokenized-text"></div>
+        <div class="max-tokens" id="max-tokens">Num Tokens: 0</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

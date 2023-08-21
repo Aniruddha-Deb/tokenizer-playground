@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tokenizer-options {
+    margin-bottom: 10px;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 98.5%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.tokenized-text {
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: 'Whitespace', monospace;
+}
+
+@font-face {
+  font-family: 'Whitespace';
+  src: monospace;
+  unicode-range: U+23B5;
+  color: #888888;
+}
+
+.max-tokens {
+    margin-top: 10px;
+}
+
+.token {
+    /* display: inline-block; */
+    padding: 2px 0px;
+    border-radius: 0px;
+}
+
+.token-id {
+    font-weight: bold;
+}
+
+.pastel-color-1 {
+    background-color: #f1c4d4;
+}
+
+.pastel-color-2 {
+    background-color: #a7d7c5;
+}
+
+.pastel-color-3 {
+    background-color: #f6b09e;
+}
+
+.pastel-color-4 {
+    background-color: #ffd699;
+}
+
+.pastel-color-5 {
+    background-color: #c3aed6;
+}
+
+.pastel-color-6 {
+    background-color: #b4d7e9;
+}
+
+.pastel-color-7 {
+    background-color: #e4c1f9;
+}
+
+.pastel-color-8 {
+    background-color: #c9eda7;
+}
+
+.pastel-color-9 {
+    background-color: #f5e18c;
+}
+
+.pastel-color-10 {
+    background-color: #b6e0e0;
+}
