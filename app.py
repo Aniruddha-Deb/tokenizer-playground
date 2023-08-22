@@ -1,9 +1,12 @@
 from flask import Flask, request, jsonify
 import tiktoken
+import transformers
 
 from llama_tokenizer import LLaMaTokenizer
 
-app = Flask(__name__)
+app = Flask(__name__,
+            static_url_path='', 
+            static_folder='static')
 
 openai_tokenizers = {
     'gpt-4': tiktoken.encoding_for_model('gpt-4'),
@@ -13,6 +16,11 @@ openai_tokenizers = {
 
 llama_tokenizers = {
     'llama-2-70b': LLaMaTokenizer('models/llama-2-70b.model')
+}
+
+hf_tokenizers = {
+    'muril': transformers.AutoTokenizer.from_pretrained('google/muril-base-cased'),
+    'mbert': transformers.AutoTokenizer.from_pretrained('bert-base-multilingual-cased')
 }
 
 def tokenize_openai(text, model):
@@ -61,6 +69,18 @@ def tokenize_llama(text, model):
         'tokens_int': tokens
     }
 
+def tokenize_hf(text, model):
+
+    tokenizer = hf_tokenizers[model]
+    tokens = tokenizer.encode(text)
+    tok_list = [tokenizer.decode(t) for t in tokens]
+
+    return {
+        'num_tokens': len(tokens),
+        'tokens_str': tok_list,
+        'tokens_int': tokens
+    }
+
 @app.route('/api/get_tokens', methods=['POST'])
 def get_tokens():
     data = request.get_json()
@@ -71,6 +91,8 @@ def get_tokens():
         response = tokenize_openai(text, model)
     elif model in llama_tokenizers:
         response = tokenize_llama(text, model)
+    elif model in hf_tokenizers:
+        response = tokenize_hf(text, model)
     else:
         return jsonify({"error": "Invalid tokenizer choice"})
 

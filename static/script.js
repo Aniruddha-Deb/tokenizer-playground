@@ -70,7 +70,7 @@ function updateTokenizedText() {
         const tokenizerType = tokenizerSelect.value;
 
         var paddingStr = ""
-        if (tokenizerType.startsWith('llama')) {
+        if (!(tokenizerType.startsWith('gpt') || tokenizerType == 'text-davinci-002')) {
             paddingStr = 'style="padding-left: 4px; padding-right: 4px;"'
         }
 

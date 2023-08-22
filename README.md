@@ -21,4 +21,4 @@ Then go to [http://127.0.0.1:5000/static/index.html](http://127.0.0.1:5000/stati
 - [X] OpenAI tokenizer support
 - [X] LLaMa 2 tokenizers
 - [ ] PaLM tokenizers
-- [ ] HF tokenizers integration
+- [X] HF tokenizers integration
