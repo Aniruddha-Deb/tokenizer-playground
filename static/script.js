@@ -98,7 +98,7 @@ function updateTokenizedText() {
             });
         }
 
-        tokenizedText.innerHTML = `<pre>${tokenizedHTML}</pre>`;
+        tokenizedText.innerHTML = `${tokenizedHTML}`;
     })
     .catch(error => {
         console.error('Error:', error);

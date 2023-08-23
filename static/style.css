@@ -33,14 +33,8 @@ textarea {
     background-color: #f9f9f9;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-family: 'Whitespace', monospace;
-}
-
-@font-face {
-  font-family: 'Whitespace';
-  src: monospace;
-  unicode-range: U+23B5;
-  color: #888888;
+    font-family: monospace;
+    overflow-wrap: anywhere;
 }
 
 .max-tokens {
@@ -49,7 +43,7 @@ textarea {
 
 .token {
     /* display: inline-block; */
-    padding: 2px 0px;
+    padding: 0px 0px;
     border-radius: 0px;
 }
 
